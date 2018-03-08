@@ -10,8 +10,8 @@ My inspiration was to answer the following questions:
 - Geography - Where do UFO sightings occur the most?
 - Seasonality - Is there a popular time during the year that UFO sightings happen?
 - Consistency - Are there frequently used descriptions in the 'shapes' section?
-  •	Probability - Statistically, build a model that predicts a hoax correctly
-  •	Visually - Build a model that displays UFO sightings on a map
+- Probability - Statistically, build a model that predicts a hoax correctly
+- Visual - Build a model that displays UFO sightings on a map
 
 ## Observations on the quality of the data
 
