@@ -1,8 +1,14 @@
-## Welcome to GitHub Pages
+## ANALYZING UFO SIGHTINGS
 
-title: Welcome to the UFO Sightings Data Site
+This dataset contains over 112,000 reports of UFO sightings dating back to 1939.
 
-This dataset contains over 150,000 reports of UFO sightings over the last century.
+## Description
+
+I collected the UFO Sightings data by scraping the datapoints from the NUFORC website (http://www.nuforc.org/).  The reporting center collects data with an online form or through a hotline.  
+
+## Observations on the quality of the data
+
+The data is by far the most badly formatted data I have worked with and I underestimated the amount of time it would take to get this dataset in working order.  The form used to enter the UFO sigtings should contain only dropdown menu options, but unfortunatly the dropdown menu option was only used for 2 out of 11 main questions.  The shear amount of data lead made it impossible to work slowly through trying to format the data into a single format.  The variation of the defining time values was so great that one small change in code led to wide variations in accuracy.  The locations listed in the records just had a county name others distances and locations out side of known locations. Addtionally, all the questions in the data entry form are not mandatory and therefore this led to many data records being incomplete.
 
 Data Analysis Questions:
 What areas of the country are most likely to have UFO sightings?
@@ -11,7 +17,7 @@ Do clusters of UFO sightings correlate with landmarks, such as airports or gover
 What are the most common UFO descriptions?
 Is there a distinction between UFO sightings and UFO abductions?  
 
-
+## Analysis:
 
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
