@@ -24,7 +24,7 @@ I completed this project using R.  I was struggling with cleaning the data in R 
 After cleaning the data I reviewed my hard work with the following commands:
 
 knitr::kable(head(ufo))
-str(ufo)
+# str(ufo)
 
 I noticed my values needed to be converted to factors:
 
