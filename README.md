@@ -54,7 +54,7 @@ I needed the following libraries to run my models:
    library(caTools)    
    library(DMwR)    
        
-Amount of UFO Sightings by Region:    
+### Amount of UFO Sightings by Region:    
     
 countregion <-summary(ufo$Region)    
 plot(ufo$Region, main="UFO Sightings by Region", ylab="Total Sightings", xlab="Region",col="green")   
@@ -93,10 +93,11 @@ regionplot2
 ![image](https://user-images.githubusercontent.com/36289126/37190283-42b581b8-2316-11e8-8fcd-b1947917832a.png)  
     
     
-UFO Sightings by state    
+### UFO Sightings by state:    
     
 countstate <-summary(ufo$State)    
-plot(ufo$State)    
+plot(ufo$State, main="UFO Sightings by State", ylab="Total Sightings", xlab="State",col="green")        
+    
     
 countstate <- as.table(countstate)    
 countstate <- as.data.frame(countstate)    
