@@ -165,12 +165,26 @@ countstateplot2
 ### Amount of UFO Sightings Per Day of week:    
 ufo$weekday <- factor(weekdays(ufo$Date, T), levels = rev(c("Mon", "Tue", "Wed", "Thu","Fri", "Sat", "Sun")))    
 plot(ufo$weekday, xlab="Day of the Week", ylab="Total Sightings", main="UFO Sighting by Day", col = "Green")    
+ 
+![image](https://user-images.githubusercontent.com/36289126/37191769-e7f3f44a-231e-11e8-8721-45cd315b734d.png)   
     
+     
 ### Amount of UFO Sightings Per Decade:
 ufo$year<-as.numeric(format(ufo$Date, "%Y"))    
 summary(ufo$year)       
-
+    
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     
+   1930    2002    2009    2006    2013    2029         
    
+ufo$decade<- ufo$year - (ufo$year %% 10)    
+ufo$decade    
+hist(ufo$decade, xlab="Decade", ylab="# of Sightings", main = "UFO Sightings by Decade", col="green")    
+
+
+    
+ufo$century<- ufo$year - (ufo$year %% 100)    
+ufo$century     
+hist(ufo$century, xlab="Century", ylab="# of Sightings", main = "UFO Sightings by Century", col = "Green")    
    
    
 ## Analysis results
