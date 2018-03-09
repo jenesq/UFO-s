@@ -36,61 +36,61 @@ ufo$State=as.factor(ufo$State)
 
 Checking the variables as factors:    
 
-head(ufo)
-summary(ufo)
+head(ufo)    
+summary(ufo)    
    
 ## Models, Analysis, Tools/Libraries used:
 
-I needed the following libraries to run my models:
-   library(zoo)
-   library(maps)
-   library(mapdata)
-   library(ggplot2)
-   library(devtools)
-   library(dplyr)
-   library(stringr)
-   library(viridis)
-   library(lsr)
-   library(caTools)
-   library(DMwR)
-   
-Amount of UFO Sightings by Region:
-
-countregion <-summary(ufo$Region)
-plot(ufo$Region, main="UFO Sightings by Region", ylab="Total Sightings", xlab="Region",col="green")
-countregion <- as.table(countregion)
-countregion <- as.data.frame(countregion)
-colnames(countregion) <- c("region", "count")
-str(countregion)
-head(countregion)
+I needed the following libraries to run my models:    
+   library(zoo)    
+   library(maps)    
+   library(mapdata)    
+   library(ggplot2)    
+   library(devtools)    
+   library(dplyr)    
+   library(stringr)    
+   library(viridis)    
+   library(lsr)    
+   library(caTools)    
+   library(DMwR)    
+       
+Amount of UFO Sightings by Region:    
+    
+countregion <-summary(ufo$Region)    
+plot(ufo$Region, main="UFO Sightings by Region", ylab="Total Sightings", xlab="Region",col="green")    
+countregion <- as.table(countregion)    
+countregion <- as.data.frame(countregion)    
+colnames(countregion) <- c("region", "count")    
+str(countregion)    
+head(countregion)    
 regionplot1 <- ggplot(countregion, aes(x = region, y = count)) +
-  geom_bar(stat = "identity",colour="Green") +labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")
-regionplot1
+  geom_bar(stat = "identity",colour="Green") +labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")    
+regionplot1    
 regionplot2 <- ggplot(countregion, aes(x = reorder(region, -count), y = count)) +
-  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")
-regionplot2
-
-UFO Sightings by state
-
-countstate <-summary(ufo$State)
-plot(ufo$State)
-
-countstate <- as.table(countstate)
-countstate <- as.data.frame(countstate)
-colnames(countstate) <- c("state", "count")
-str(countstate)
-head(countstate)
-summary(countstate)
-
+  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")    
+regionplot2    
+    
+UFO Sightings by state    
+    
+countstate <-summary(ufo$State)    
+plot(ufo$State)    
+    
+countstate <- as.table(countstate)    
+countstate <- as.data.frame(countstate)    
+colnames(countstate) <- c("state", "count")    
+str(countstate)    
+head(countstate)    
+summary(countstate)    
+    
 stateplot1 <- ggplot(countstate, aes(x = state, y = count)) +
-  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")
-stateplot1
+  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
+stateplot1    
 stateplot2 <- ggplot(countstate, aes(x = reorder(state, -count), y = count)) +
-  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")
-stateplot2 
-
-sightings per state relative to state population:
-
+  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
+stateplot2    
+    
+sightings per state relative to state population:    
+    
 countstate$statespop <- c("4067175", "746079", "4872725", "2998643", "7044577", "4631000", "39506094",
                           "5632271", "3568174", "691963", "960054", "20979964", "10421344", "1431957", 
                           "3147389", "1713452", "12764031", "6653338", "2907857", "4449337", "4694372",
@@ -100,19 +100,19 @@ countstate$statespop <- c("4067175", "746079", "4872725", "2998643", "7044577", 
                           "11623656", "3939708", "13600000", "4162296", "12776550", "146283",
                           "3661538", "8215000", "1057245", "1677000", "5027404", "872989", "1130000", "6707332", 
                           "28295553", "3111802", "8456029", "102951", "623100", "7415710", "5789525", 
-                          "1821151", "584447", "35847", "0")
-countstate
-countstate<-countstate[-c(67), ]
-countstate
-countstate$statespop=as.numeric(countstate$statespop)
-countstate$propsight = (countstate$count / countstate$statespop)*100 # prop data series for viz, scaled for style
+                          "1821151", "584447", "35847", "0")    
+countstate    
+countstate<-countstate[-c(67), ]    
+countstate    
+countstate$statespop=as.numeric(countstate$statespop)    
+countstate$propsight = (countstate$count / countstate$statespop)*100 # prop data series for viz, scaled for style    
 countstateplot1 <- ggplot(countstate, aes(x = state, y = propsight)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
-countstateplot1
+countstateplot1    
 countstateplot2 <- ggplot(countstate, aes(x = reorder(state, -propsight), y = propsight)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
-countstateplot2
-
+countstateplot2    
+    
 
    
    
