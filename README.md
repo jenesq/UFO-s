@@ -185,8 +185,27 @@ hist(ufo$decade, xlab="Decade", ylab="# of Sightings", main = "UFO Sightings by 
 ufo$century<- ufo$year - (ufo$year %% 100)    
 ufo$century     
 hist(ufo$century, xlab="Century", ylab="# of Sightings", main = "UFO Sightings by Century", col = "Green")    
+       
+![image](https://user-images.githubusercontent.com/36289126/37192012-36da25a6-2320-11e8-8d0a-fe424828cfdd.png)    
+
+### Most Popular Month:
+str(ufo$Date)    
+ufo$month<-as.factor(format(ufo$Date, "%m"))     
+summary(ufo$month)    
+    
+plot(ufo$month,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month",col="green")    
    
-   
+
+ufoDataByMonth <-summary(ufo$month)    
+ufoDataByMonth <- as.table(ufoDataByMonth)    
+ufoDataByMonth <- as.data.frame(ufoDataByMonth)    
+colnames(ufoDataByMonth) <- c("month", "count")    
+    
+plot(ufoDataByMonth,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month")    
+
+
+
+
 ## Analysis results
 
 ## Conclusion 
