@@ -325,6 +325,53 @@ One is numeric and other is a factor/character
   return(corrmat)    
 }    
 cor2(df)    
+    
+![image](https://user-images.githubusercontent.com/36289126/37194851-6f96ca40-232d-11e8-8851-6276c2716d67.png)    
+
+### Probability - Is it a hoax??  Can I build a model that predicts hoax?   
+The dataset came with sightings marked as Hoax.  THe Hoax data was significantly lower when compared to the entire dataset.    
+With the large spread I decided to use SMOTE to balance the data.    
+    
+ufo$Hoax = as.character(ufo$Hoax)    
+ufo$Hoax[ufo$Hoax == "NoHoax"] = "0"    
+ufo$Hoax[ufo$Hoax == "YesHoax"] = "1"    
+ufo$Hoax = as.factor(ufo$Hoax)    
+modeldata=ufo[,c(10,5,6,15,3,11,19,16,13,14)]    
+modeldata=na.omit(modeldata)    
+ModelSM <- SMOTE(Hoax ~ ., as.data.frame(modeldata), perc.over = 42000, perc.under = 2000)    
+    
+set.seed(111)    
+split = sample.split(ModelSM$Hoax, SplitRatio = 0.8)    
+trainset = subset(ModelSM, split == TRUE)    
+testset = subset(ModelSM, split == FALSE)    
+    
+The dimension was determiened to be 42000 decided by takking 100/(269Hoax/112652NoHoax) in dataset= ~42000    
+    
+trainset$Hoax = as.numeric(trainset$Hoax)    
+model <- glm(Hoax ~ ., data=trainset)    
+summary(model)    
+    
+pred<-predict.glm(model,testset)   
+pred2<- ifelse(c(pred) > 1.37,1,0)    
+predict3=as.vector(pred2)    
+table(testset$Hoax, predict3)    
+Accuracy <-(225276+4400)/(225276+4400+7051+3204)    
+Accuracy    
+    
+[1] 0.9572585    
+
+The model predicted a hoax correctly 97% of the time.    
+
+### World Map Displaying the UFO Sightings:    
+    
+I borrowed the code from https://www.kaggle.com/mrisdal/animating-ufo-sightings.  I tried using other options by using different packages and I kept getting an error for the version of R I am using.    
+    
+map <- borders("world", colour = "green", fill="gray66")    
+ufo_map <- ggplot(ufo, aes(frame = year)) + map +    
+  geom_point(aes(x=Longitude, y=Latitude, color=Shape)) +    
+  scale_color_viridis(discrete = TRUE, alpha = 0.75) +     
+  theme(legend.position = "none")    
+ufo_map    
 
 
 
