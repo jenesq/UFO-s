@@ -77,7 +77,7 @@ str(countregion)
      
 head(countregion)    
     
-             region count    
+         region count    
 1        Alaska   519    
 2        Canada  4727    
 3 International  8084    
@@ -92,7 +92,8 @@ regionplot2 <- ggplot(countregion, aes(x = reorder(region, -count), y = count)) 
 regionplot2   
     
         
-        
+    ![image](https://user-images.githubusercontent.com/36289126/37190283-42b581b8-2316-11e8-8fcd-b1947917832a.png)        
+    
     
 UFO Sightings by state    
     
