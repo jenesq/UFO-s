@@ -23,18 +23,18 @@ I completed this project using R.  I was struggling with cleaning the data in R 
 
 After cleaning the data I reviewed my hard work with the following commands:
 
-knitr::kable(head(ufo))
-str(ufo)
+knitr::kable(head(ufo))    
+str(ufo)    
 
-I noticed my values needed to be converted to factors:
+I noticed my values needed to be converted to factors:    
 
-ufo$ampm=as.factor(ufo$ampm)
-ufo$Region=as.factor(ufo$Region)
-ufo$Hoax=as.factor(ufo$Hoax)
-ufo$Shape=as.factor(ufo$Shape)
-ufo$State=as.factor(ufo$State)
+ufo$ampm=as.factor(ufo$ampm)    
+ufo$Region=as.factor(ufo$Region)    
+ufo$Hoax=as.factor(ufo$Hoax)    
+ufo$Shape=as.factor(ufo$Shape)     
+ufo$State=as.factor(ufo$State)    
 
-Checking the variables as factors:
+Checking the variables as factors:    
 
 head(ufo)
 summary(ufo)
