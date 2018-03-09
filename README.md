@@ -160,7 +160,9 @@ countstateplot2 <- ggplot(countstate, aes(x = reorder(state, -propsight), y = pr
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
 countstateplot2    
     
-        
+![image](https://user-images.githubusercontent.com/36289126/37191616-018a2e02-231e-11e8-8daf-ef81981e2294.png)    
+    
+    
 
    
    
