@@ -127,9 +127,14 @@ stateplot2 <- ggplot(countstate, aes(x = reorder(state, -count), y = count)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
 stateplot2   
     
+![image](https://user-images.githubusercontent.com/36289126/37191287-d886d3f4-231b-11e8-8f15-03ff3d69a023.png)    
+    
+
+### Sightings per state relative to state population:  
+
+I wanted to "normalize" the data relative to state to put some perspective on the number of UFO sightings per state.    
 
 
-sightings per state relative to state population:    
     
 countstate$statespop <- c("4067175", "746079", "4872725", "2998643", "7044577", "4631000", "39506094",
                           "5632271", "3568174", "691963", "960054", "20979964", "10421344", "1431957", 
