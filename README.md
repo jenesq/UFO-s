@@ -93,7 +93,7 @@ regionplot2
 ![image](https://user-images.githubusercontent.com/36289126/37190283-42b581b8-2316-11e8-8fcd-b1947917832a.png)  
     
     
-### UFO Sightings by state:    
+### UFO Sightings by State:    
     
 countstate <-summary(ufo$State)    
 plot(ufo$State, main="UFO Sightings by State", ylab="Total Sightings", xlab="State",col="green")        
@@ -130,22 +130,20 @@ stateplot2
 ![image](https://user-images.githubusercontent.com/36289126/37191287-d886d3f4-231b-11e8-8f15-03ff3d69a023.png)    
     
 
-### Sightings per state relative to state population:  
+### Sightings per State Relative to State Population:  
 
 I wanted to "normalize" the data relative to state to put some perspective on the number of UFO sightings per state.    
-
-
     
-countstate$statespop <- c("4067175", "746079", "4872725", "2998643", "7044577", "4631000", "39506094",
-                          "5632271", "3568174", "691963", "960054", "20979964", "10421344", "1431957", 
-                          "3147389", "1713452", "12764031", "6653338", "2907857", "4449337", "4694372",
-                          "6839318", "1282000", "6037911", "1333505", "9938885", "5557469", "6109796", 
-                          "2988062", "1052967", "753914", "10258390", "759069", "1920467", "528448", 
-                          "1339479", "8953517", "2081702", "942926", "211945", "2996358", "19743395",
-                          "11623656", "3939708", "13600000", "4162296", "12776550", "146283",
-                          "3661538", "8215000", "1057245", "1677000", "5027404", "872989", "1130000", "6707332", 
-                          "28295553", "3111802", "8456029", "102951", "623100", "7415710", "5789525", 
-                          "1821151", "584447", "35847", "0")    
+countstate$statespop <- c("4067175", "746079", "4872725", "2998643", "7044577", "4631000", "39506094",    
+                          "5632271", "3568174", "691963", "960054", "20979964", "10421344", "1431957",     
+                          "3147389", "1713452", "12764031", "6653338", "2907857", "4449337", "4694372",    
+                          "6839318", "1282000", "6037911", "1333505", "9938885", "5557469", "6109796",     
+                          "2988062", "1052967", "753914", "10258390", "759069", "1920467", "528448",     
+                          "1339479", "8953517", "2081702", "942926", "211945", "2996358", "19743395",    
+                          "11623656", "3939708", "13600000", "4162296", "12776550", "146283",    
+                          "3661538", "8215000", "1057245", "1677000", "5027404", "872989", "1130000", "6707332",     
+                          "28295553", "3111802", "8456029", "102951", "623100", "7415710", "5789525",     
+                          "1821151", "584447", "35847", "0")        
 countstate    
 countstate<-countstate[-c(67), ]    
 countstate    
@@ -154,6 +152,10 @@ countstate$propsight = (countstate$count / countstate$statespop)*100 # prop data
 countstateplot1 <- ggplot(countstate, aes(x = state, y = propsight)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
 countstateplot1    
+    
+ 
+ 
+ 
 countstateplot2 <- ggplot(countstate, aes(x = reorder(state, -propsight), y = propsight)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
 countstateplot2    
