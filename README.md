@@ -232,8 +232,8 @@ TotalMonths
 12    12  8062    81.43434  
     
 plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
-
-
+    
+![image](https://user-images.githubusercontent.com/36289126/37192477-de39a4e6-2322-11e8-90c0-679b92779234.png)    
 
 
 ## Analysis results
