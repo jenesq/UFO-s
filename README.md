@@ -194,14 +194,44 @@ ufo$month<-as.factor(format(ufo$Date, "%m"))
 summary(ufo$month)    
     
 plot(ufo$month,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month",col="green")    
-   
-
+       
+![image](https://user-images.githubusercontent.com/36289126/37192149-1410c1c8-2321-11e8-8f97-bf0b7e27d9e1.png)    
+    
+    
 ufoDataByMonth <-summary(ufo$month)    
 ufoDataByMonth <- as.table(ufoDataByMonth)    
 ufoDataByMonth <- as.data.frame(ufoDataByMonth)    
 colnames(ufoDataByMonth) <- c("month", "count")    
     
 plot(ufoDataByMonth,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month")    
+    
+![image](https://user-images.githubusercontent.com/36289126/37192155-1f4473fa-2321-11e8-9162-111c37d9566d.png)    
+    
+
+### Calculate avg ufo sightings by month:    
+Totalyears = max(ufo$year)-min(ufo$year)    
+TotalMonths <-summary(ufo$month)    
+TotalMonths <-as.table(TotalMonths)    
+TotalMonths= as.data.frame(TotalMonths)    
+colnames(TotalMonths) <- c("month", "total")    
+TotalMonths$AvgPerMonth <-(TotalMonths$total)/Totalyears    
+TotalMonths    
+    
+   month total AvgPerMonth    
+1     01  7920    80.00000    
+2     02  6536    66.02020    
+3     03  7249    73.22222    
+4     04  7374    74.48485    
+5     05  7598    76.74747    
+6     06 11352   114.66667    
+7     07 13464   136.00000    
+8     08 11984   121.05051    
+9     09 10969   110.79798    
+10    10 10584   106.90909    
+11    11  9718    98.16162    
+12    12  8062    81.43434  
+    
+plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
 
 
 
