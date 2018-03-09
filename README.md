@@ -98,6 +98,8 @@ regionplot2
 countstate <-summary(ufo$State)    
 plot(ufo$State, main="UFO Sightings by State", ylab="Total Sightings", xlab="State",col="green")        
     
+![image](https://user-images.githubusercontent.com/36289126/37190839-6988439a-2319-11e8-9408-d7989cf70a6e.png)    
+    
     
 countstate <- as.table(countstate)    
 countstate <- as.data.frame(countstate)    
@@ -105,6 +107,15 @@ colnames(countstate) <- c("state", "count")
 str(countstate)    
 head(countstate)    
 summary(countstate)    
+    
+     state        count            
+ AB     : 1   Min.   :    2.0      
+ AK     : 1   1st Qu.:  397.5      
+ AL     : 1   Median :  991.0      
+ AR     : 1   Mean   : 1683.7      
+ AZ     : 1   3rd Qu.: 2027.0      
+ BC     : 1   Max.   :13024.0      
+ (Other):61    
     
 stateplot1 <- ggplot(countstate, aes(x = state, y = count)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
