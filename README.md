@@ -57,8 +57,14 @@ I needed the following libraries to run my models:
 Amount of UFO Sightings by Region:    
     
 countregion <-summary(ufo$Region)    
-plot(ufo$Region, main="UFO Sightings by Region", ylab="Total Sightings", xlab="Region",col="green")    
-countregion <- as.table(countregion)    
+plot(ufo$Region, main="UFO Sightings by Region", ylab="Total Sightings", xlab="Region",col="green")   
+
+
+
+
+
+
+countregion <- as.table(countregion)    
 countregion <- as.data.frame(countregion)    
 colnames(countregion) <- c("region", "count")    
 str(countregion)    
