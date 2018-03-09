@@ -180,8 +180,8 @@ ufo$decade<- ufo$year - (ufo$year %% 10)
 ufo$decade    
 hist(ufo$decade, xlab="Decade", ylab="# of Sightings", main = "UFO Sightings by Decade", col="green")    
 
-
-    
+![image](https://user-images.githubusercontent.com/36289126/37191852-66baf5da-231f-11e8-8435-c7710c199ee2.png)    
+        
 ufo$century<- ufo$year - (ufo$year %% 100)    
 ufo$century     
 hist(ufo$century, xlab="Century", ylab="# of Sightings", main = "UFO Sightings by Century", col = "Green")    
