@@ -253,11 +253,90 @@ head(countshape)
 shapeplot1 <- ggplot(countshape, aes(x = shape, y = count)) +    
   geom_bar(stat = "identity",colour="Green")    
 shapeplot1    
+    
+![image](https://user-images.githubusercontent.com/36289126/37194585-275dd742-232c-11e8-94e1-ed94c69b91a1.png)    
 
-
+    
 shapeplot2 <- ggplot(countshape, aes(x = reorder(shape, -count), y = count)) +    
   geom_bar(stat = "identity",colour="Green")    
 shapeplot2    
+    
+![image](https://user-images.githubusercontent.com/36289126/37194589-2dce2c30-232c-11e8-8e3f-159b33cbaf28.png)    
+
+
+### Correlations Matrix:    
+(Function borrowed from https://gist.github.com/talegari/b514dbbc651c25e2075d88f31d48057b):
+df=ufo[,c(10,5,6,15,3,11,19,16,13,14)]    
+    
+cor2 = function(df){    
+      
+  stopifnot(inherits(df, "data.frame"))    
+  stopifnot(sapply(df, class) %in% c("integer"    
+                                     , "numeric"    
+                                     , "factor"    
+                                     , "character"))    
+      
+  cor_fun <- function(pos_1, pos_2){    
+        
+Both are numeric    
+    if(class(df[[pos_1]]) %in% c("integer", "numeric") &&    
+       class(df[[pos_2]]) %in% c("integer", "numeric")){    
+      r <- stats::cor(df[[pos_1]]    
+                      , df[[pos_2]]    
+                      , use = "pairwise.complete.obs"    
+      )    
+    }    
+        
+One is numeric and other is a factor/character    
+    if(class(df[[pos_1]]) %in% c("integer", "numeric") &&    
+       class(df[[pos_2]]) %in% c("factor", "character")){    
+      r <- sqrt(    
+        summary(    
+          stats::lm(df[[pos_1]] ~ as.factor(df[[pos_2]])))[["r.squared"]])    
+    }    
+    
+    if(class(df[[pos_2]]) %in% c("integer", "numeric") &&    
+       class(df[[pos_1]]) %in% c("factor", "character")){    
+      r <- sqrt(    
+        summary(    
+          stats::lm(df[[pos_2]] ~ as.factor(df[[pos_1]])))[["r.squared"]])    
+    }    
+        
+ Both are factor/character    
+    if(class(df[[pos_1]]) %in% c("factor", "character") &&    
+       class(df[[pos_2]]) %in% c("factor", "character")){    
+      r <- lsr::cramersV(df[[pos_1]], df[[pos_2]], simulate.p.value = TRUE)    
+    }    
+        
+    return(r)    
+  }     
+      
+  cor_fun <- Vectorize(cor_fun)    
+      
+ - Starting to compute corr matrix    
+  corrmat <- outer(1:ncol(df)    
+                   , 1:ncol(df)    
+                   , function(x, y) cor_fun(x, y)    
+  )     
+      
+  rownames(corrmat) <- colnames(df)    
+  colnames(corrmat) <- colnames(df)    
+      
+  return(corrmat)    
+}    
+cor2(df)    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Analysis results
