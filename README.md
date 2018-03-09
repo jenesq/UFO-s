@@ -120,10 +120,15 @@ summary(countstate)
 stateplot1 <- ggplot(countstate, aes(x = state, y = count)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
 stateplot1    
+    
+![image](https://user-images.githubusercontent.com/36289126/37191101-df79c816-231a-11e8-823f-32928dc8c3ae.png)    
+    
 stateplot2 <- ggplot(countstate, aes(x = reorder(state, -count), y = count)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
-stateplot2    
+stateplot2   
     
+
+
 sightings per state relative to state population:    
     
 countstate$statespop <- c("4067175", "746079", "4872725", "2998643", "7044577", "4631000", "39506094",
