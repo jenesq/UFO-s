@@ -242,8 +242,9 @@ plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="M
 countshape <-summary(ufo$Shape)    
 countshape    
 plot(ufo$Shape)    
-
-
+    
+![image](https://user-images.githubusercontent.com/36289126/37194214-6a8ca464-232a-11e8-811f-cd8428264b1a.png)    
+    
 countshape <- as.table(countshape)    
 countshape <- as.data.frame(countshape)    
 colnames(countshape) <- c("shape", "count")    
