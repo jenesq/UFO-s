@@ -235,6 +235,28 @@ TotalMonths
 plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
     
 ![image](https://user-images.githubusercontent.com/36289126/37192477-de39a4e6-2322-11e8-90c0-679b92779234.png)    
+    
+    
+### UFO Descriptions:
+
+countshape <-summary(ufo$Shape)    
+countshape    
+plot(ufo$Shape)    
+
+
+countshape <- as.table(countshape)    
+countshape <- as.data.frame(countshape)    
+colnames(countshape) <- c("shape", "count")    
+str(countshape)    
+head(countshape)    
+shapeplot1 <- ggplot(countshape, aes(x = shape, y = count)) +    
+  geom_bar(stat = "identity",colour="Green")    
+shapeplot1    
+
+
+shapeplot2 <- ggplot(countshape, aes(x = reorder(shape, -count), y = count)) +    
+  geom_bar(stat = "identity",colour="Green")    
+shapeplot2    
 
 
 ## Analysis results
