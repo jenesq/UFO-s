@@ -59,7 +59,6 @@ Amount of UFO Sightings by Region:
 countregion <-summary(ufo$Region)    
 plot(ufo$Region, main="UFO Sightings by Region", ylab="Total Sightings", xlab="Region",col="green")   
     
-
 ![image](https://user-images.githubusercontent.com/36289126/37189951-38ab56ae-2314-11e8-934b-db52a2b205f2.png)    
 
     
@@ -91,8 +90,7 @@ regionplot2 <- ggplot(countregion, aes(x = reorder(region, -count), y = count)) 
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")    
 regionplot2   
     
-        
-    ![image](https://user-images.githubusercontent.com/36289126/37190283-42b581b8-2316-11e8-8fcd-b1947917832a.png)        
+![image](https://user-images.githubusercontent.com/36289126/37190283-42b581b8-2316-11e8-8fcd-b1947917832a.png)  
     
     
 UFO Sightings by state    
