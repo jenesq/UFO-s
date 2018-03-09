@@ -229,7 +229,8 @@ TotalMonths
 9     09 10969   110.79798    
 10    10 10584   106.90909    
 11    11  9718    98.16162    
-12    12  8062    81.43434  
+12    12  8062    81.43434    
+    
     
 plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
     
