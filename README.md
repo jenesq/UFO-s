@@ -108,28 +108,21 @@ str(countstate)
 head(countstate)    
 summary(countstate)    
     
-     state        count            
- AB     : 1   Min.   :    2.0      
- AK     : 1   1st Qu.:  397.5      
- AL     : 1   Median :  991.0      
- AR     : 1   Mean   : 1683.7      
- AZ     : 1   3rd Qu.: 2027.0      
- BC     : 1   Max.   :13024.0      
- (Other):61    
+![image](https://user-images.githubusercontent.com/36289126/37238293-47a4aee0-23e0-11e8-92a1-6aebe183ac91.png)    
     
-stateplot1 <- ggplot(countstate, aes(x = state, y = count)) +
+stateplot1 <- ggplot(countstate, aes(x = state, y = count)) +    
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
 stateplot1    
     
 ![image](https://user-images.githubusercontent.com/36289126/37191101-df79c816-231a-11e8-823f-32928dc8c3ae.png)    
     
-stateplot2 <- ggplot(countstate, aes(x = reorder(state, -count), y = count)) +
+stateplot2 <- ggplot(countstate, aes(x = reorder(state, -count), y = count)) +    
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State", y="Total Sightings", x="State")    
 stateplot2   
     
 ![image](https://user-images.githubusercontent.com/36289126/37191287-d886d3f4-231b-11e8-8f15-03ff3d69a023.png)    
     
-
+        
 ### Sightings per State Relative to State Population:  
 
 I wanted to "normalize" the data relative to state to put some perspective on the number of UFO sightings per state.    
@@ -149,27 +142,27 @@ countstate<-countstate[-c(67), ]
 countstate    
 countstate$statespop=as.numeric(countstate$statespop)    
 countstate$propsight = (countstate$count / countstate$statespop)*100 # prop data series for viz, scaled for style    
-countstateplot1 <- ggplot(countstate, aes(x = state, y = propsight)) +
-  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
+countstateplot1 <- ggplot(countstate, aes(x = state, y = propsight)) +    
+  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")  
 countstateplot1    
     
  ![image](https://user-images.githubusercontent.com/36289126/37191526-74a5014c-231d-11e8-97a5-b4735bb8fa6e.png)    
      
     
-countstateplot2 <- ggplot(countstate, aes(x = reorder(state, -propsight), y = propsight)) +
-  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")
+countstateplot2 <- ggplot(countstate, aes(x = reorder(state, -propsight), y = propsight)) +    
+  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")  
 countstateplot2    
     
 ![image](https://user-images.githubusercontent.com/36289126/37191616-018a2e02-231e-11e8-8daf-ef81981e2294.png)    
     
 ### Amount of UFO Sightings Per Day of week:    
-ufo$weekday <- factor(weekdays(ufo$Date, T), levels = rev(c("Mon", "Tue", "Wed", "Thu","Fri", "Sat", "Sun")))    
+ufo$weekday <- factor(weekdays(ufo$Date, T), levels = rev(c("Mon", "Tue", "Wed", "Thu","Fri", "Sat", "Sun")))       
 plot(ufo$weekday, xlab="Day of the Week", ylab="Total Sightings", main="UFO Sighting by Day", col = "Green")    
- 
+   
 ![image](https://user-images.githubusercontent.com/36289126/37191769-e7f3f44a-231e-11e8-8721-45cd315b734d.png)   
     
      
-### Amount of UFO Sightings Per Decade:
+### Amount of UFO Sightings Per Decade:    
 ufo$year<-as.numeric(format(ufo$Date, "%Y"))    
 summary(ufo$year)       
     
