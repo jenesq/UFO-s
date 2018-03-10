@@ -19,8 +19,8 @@ The UFO data is by far the most badly formatted data I have worked with and I un
 
 ## Exploratory Data Analysis (EDA):
 
-I completed this project using R.  I was struggling with cleaning the data in R because of the inconsistancy in each column.  Therefore, I did a majority of cleaning in Excel.  The data columns are Date, Time, City, State, UFO Description, Comments, and Coordinates.    
-    
+I completed this project using R.  I was struggling with cleaning the data in R because of the inconsistancy in each column.  Therefore, I did a majority of cleaning in Excel.  The data columns are Date, Time, City, State, UFO Description, Comments, Region and Coordinates. The region variable is UFO sightings broken out by Alaska, Canada, International, States.  Yes, Alaska is a state, but the website had the Alaska sightings in its own link so I continued the pattern.   
+     
 After cleaning the data I reviewed my hard work with the following commands:    
     
 knitr::kable(head(ufo))    
@@ -359,7 +359,7 @@ ufo_map
 
 ## Analysis results
 
-In order to determine where the most reported UFO sightings occur?  I analyzed the UFO sightings by Region and by state.  
+In order to determine where the most reported UFO sightings occur?  I analyzed the UFO sightings by Region and by State.  
 The data revealed the following amount of UFO sightings:
 - Alaska = 519    
 - Canada = 4,727    
@@ -375,10 +375,10 @@ The data also revealed the top three most frequently sighted UFO shapes to be:
 - Circle (11,687)    
 - Triangle (10,628)    
     
-Were you expecting flying saucer?  Well, nope!  if you think about it the data makes sense.  Since the most reported UFO sightings are reported at night it is in line that the most popular shape reported is a light formation.  As we know it is dark at night, and the darkness can explain that pepole are seeing the lights but not having a clear view of the shape.    
+Were you expecting flying saucer?  Well, nope!  If you think about it the data makes sense.  Since the most reported UFO sightings are reported at night it is in line that the most popular shape reported is a light formation.  As we know it is dark at night, and the darkness can explain that people are seeing the lights but not having a clear view of the shape.    
 
 Additionally, I wanted to test the correlations between variables and see if any of them impacted one another.  The strongest correlations were between longitude and year and latitude and longitude.  This is information did not excite me.  So moving on, the dataset had clear notes of potential hoax claims flagged by the NUFORC organization.  I wanted to dig a little further into this and build a model for hoax prediction.   Only .002% of the dataset had any sightings flagged as a hoax.  In order to handle this imbalance in the dataset I used the SMOTE method.  The final model I created predicted a hoax correctly 95% of the time.  What I also found interesting about this model is almost every variable was significant in the model.  
    
-Lastly, I wanted to place the reported UFO sightings on a map for all the visual learners out there.  From the map a few patterns were notable.  First, in Russia there is a clear straight line of reported sightings making me wonder if that is a major highway.  I also found it interesting that with one of the largest populations in the world, China, did not have more reported sightings.  Either the United States is under high survelliance or we like reporting anything we see in the skies as a UFO.  
+Lastly, I wanted to place the reported UFO sightings on a map for all the visual learners out there.  From the map a few patterns were notable.  First, in Russia there is a clear straight line of reported sightings making me wonder if that is a major highway.  I also found it interesting that with one of the largest populations in the world, China, did not have more reported sightings.  Either the United States is under high surveillance or we like reporting anything we see in the skies as a UFO.  
 
 Thank you!    
