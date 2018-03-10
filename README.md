@@ -20,6 +20,8 @@ The UFO data is by far the most badly formatted data I have worked with and I un
 ## Exploratory Data Analysis (EDA):
 
 I completed this project using R.  I was struggling with cleaning the data in R because of the inconsistancy in each column.  Therefore, I did a majority of cleaning in Excel.  The data columns are Date, Time, City, State, UFO Description, Comments, Region and Coordinates. The region variable is UFO sightings broken out by Alaska, Canada, International, States.  Yes, Alaska is a state, but the website had the Alaska sightings in its own link so I continued the pattern.   
+
+**NOTE:  In each section with graphs I used different code to view the data differently, because for this project I had to writeup the project in different apps and I did not want to remove all the models I built from the code.**    
      
 After cleaning the data I reviewed my hard work with the following commands:    
     
@@ -382,3 +384,17 @@ Additionally, I wanted to test the correlations between variables and see if any
 Lastly, I wanted to place the reported UFO sightings on a map for all the visual learners out there.  From the map a few patterns were notable.  First, in Russia there is a clear straight line of reported sightings making me wonder if that is a major highway.  I also found it interesting that with one of the largest populations in the world, China, did not have more reported sightings.  Either the United States is under high surveillance or we like reporting anything we see in the skies as a UFO.  
 
 Thank you!    
+
+    
+## References:    
+
+English Oxford Living Dictionary (2018). What is the origin of the term ‘UFO’? Retrieved from     https://en.oxforddictionaries.com/explore/what-is-the-origin-of-the-term-ufo    
+    
+GitHub (2018). Talegari/executable_r_script. Retrieved from https://gist.github.com/talegari/b514dbbc651c25e2075d88f31d48057b    
+    
+Kaggle.com (2018). Animating UFO sightings. Retrieved from https://www.kaggle.com/mrisdal/animating-ufo-sightings    
+    
+The National UFO Reporting Center (2018).  Report database. Retrieved from http://www.nuforc.org/    
+    
+Vision Films. (2018). What is the alien agenda?  Retrieved from https://www.youtube.com/watch?v=qiZvRwU8lyY    
+
