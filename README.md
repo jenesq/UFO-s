@@ -217,19 +217,19 @@ colnames(TotalMonths) <- c("month", "total")
 TotalMonths$AvgPerMonth <-(TotalMonths$total)/Totalyears    
 TotalMonths    
     
-   month total AvgPerMonth    
-1     01  7920    80.00000    
-2     02  6536    66.02020    
-3     03  7249    73.22222    
-4     04  7374    74.48485    
-5     05  7598    76.74747    
-6     06 11352   114.66667    
-7     07 13464   136.00000    
-8     08 11984   121.05051    
-9     09 10969   110.79798    
-10    10 10584   106.90909    
-11    11  9718    98.16162    
-12    12  8062    81.43434    
+   month total   AvgPerMonth    
+1    01   7920    80.00000    
+2    02   6536    66.02020    
+3    03   7249    73.22222    
+4    04   7374    74.48485    
+5    05   7598    76.74747    
+6    06  11352   114.66667    
+7    07  13464   136.00000    
+8    08  11984   121.05051    
+9    09  10969   110.79798    
+10   10  10584   106.90909    
+11   11   9718    98.16162    
+12   12   8062    81.43434    
     
     
 plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
@@ -394,34 +394,3 @@ ufo_map
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jenesq/UFO-s/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
