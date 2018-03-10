@@ -39,7 +39,7 @@ Checking the variables as factors to ensure the conversion was done properly:
 head(ufo)    
 summary(ufo)    
    
-## From here on I started building the Models:    
+### Building the Models:    
 
 I needed the following libraries to run my models:    
    library(zoo)    
@@ -341,7 +341,7 @@ Accuracy
     
 [1] 0.9572585    
 
-The model predicted a hoax correctly 97% of the time.    
+The model predicted a hoax correctly 95% of the time.    
 
 ### World Map Displaying the UFO Sightings:    
     
@@ -359,8 +359,26 @@ ufo_map
 
 ## Analysis results
 
-## Conclusion 
+In order to determine where the most reported UFO sightings occur?  I analyzed the UFO sightings by Region and by state.  
+The data revealed the following amount of UFO sightings:
+- Alaska = 519    
+- Canada = 4,727    
+- International = 8,084    
+- States = 99,480    
+    
+From the models above it is clear to me that the most reported UFO sightings occur in the United States.  But, this may be due to other regions not being aware of the NUROC site?  Within the United States the most reported UFO sightings is in California (13,024 sightings), but that may be due to the sheer size of the state.  So, I adjusted the model to account for the different population sizes of each state.  This adjustment revealed that Washington is the new leader and has the largest reported UFO sightings.    
 
+Next, I discovered the most popular time of the year that UFO sightings were reported is in July on a Saturday at night.  July has an average of 136 sightings versus February that only has an average of 66 reported sightings.  Additionally, not surprisingly, the reported UFO sightings increased in each decade with an exception in 1980.   
+    
+The data also revealed the top three most frequently sighted UFO shapes to be:
+- Light (24,356)    
+- Circle (11,687)    
+- Triangle (10,628)    
+    
+Were you expecting flying saucer?  Well, nope!  if you think about it the data makes sense.  Since the most reported UFO sightings are reported at night it is in line that the most popular shape reported is a light formation.  As we know it is dark at night, and the darkness can explain that pepole are seeing the lights but not having a clear view of the shape.    
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Additionally, I wanted to test the correlations between variables and see if any of them impacted one another.  The strongest correlations were between longitude and year and latitude and longitude.  This is information did not excite me.  So moving on, the dataset had clear notes of potential hoax claims flagged by the NUFORC organization.  I wanted to dig a little further into this and build a model for hoax prediction.   Only .002% of the dataset had any sightings flagged as a hoax.  In order to handle this imbalance in the dataset I used the SMOTE method.  The final model I created predicted a hoax correctly 95% of the time.  What I also found interesting about this model is almost every variable was significant in the model.  
+   
+Lastly, I wanted to place the reported UFO sightings on a map for all the visual learners out there.  From the map a few patterns were notable.  First, in Russia there is a clear straight line of reported sightings making me wonder if that is a major highway.  I also found it interesting that with one of the largest populations in the world, China, did not have more reported sightings.  Either the United States is under high survelliance or we like reporting anything we see in the skies as a UFO.  
 
+Thank you!    
