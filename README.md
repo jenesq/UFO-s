@@ -372,7 +372,8 @@ ufo_map <- ggplot(ufo, aes(frame = year)) + map +
   scale_color_viridis(discrete = TRUE, alpha = 0.75) +     
   theme(legend.position = "none")    
 ufo_map    
-
+    
+![image](https://user-images.githubusercontent.com/36289126/37238150-6f64e2b8-23dd-11e8-8a44-51ba1f00abea.png)    
 
 
 
