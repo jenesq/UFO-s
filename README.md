@@ -146,7 +146,7 @@ countstateplot1 <- ggplot(countstate, aes(x = state, y = propsight)) +
   geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by State by Population", y="Proportion of Sightings", x="State")  
 countstateplot1    
     
- ![image](https://user-images.githubusercontent.com/36289126/37191526-74a5014c-231d-11e8-97a5-b4735bb8fa6e.png)    
+![image](https://user-images.githubusercontent.com/36289126/37191526-74a5014c-231d-11e8-97a5-b4735bb8fa6e.png)    
      
     
 countstateplot2 <- ggplot(countstate, aes(x = reorder(state, -propsight), y = propsight)) +    
@@ -166,8 +166,7 @@ plot(ufo$weekday, xlab="Day of the Week", ylab="Total Sightings", main="UFO Sigh
 ufo$year<-as.numeric(format(ufo$Date, "%Y"))    
 summary(ufo$year)       
     
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     
-   1930    2002    2009    2006    2013    2029         
+![image](https://user-images.githubusercontent.com/36289126/37238320-cd9d2a68-23e0-11e8-98a6-0b8fb4f483df.png)          
    
 ufo$decade<- ufo$year - (ufo$year %% 10)    
 ufo$decade    
@@ -356,17 +355,6 @@ ufo_map <- ggplot(ufo, aes(frame = year)) + map +
 ufo_map    
     
 ![image](https://user-images.githubusercontent.com/36289126/37238150-6f64e2b8-23dd-11e8-8a44-51ba1f00abea.png)    
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## Analysis results
