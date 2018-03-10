@@ -15,31 +15,31 @@ My inspiration was to answer the following questions:
 
 ## Observations on the quality of the data
 
-The UFO data is by far the most badly formatted data I have worked with and I underestimated the amount of time it would take to get this dataset in working order.  The data form used to enter the UFO sightings should contain only dropdown menu options, but unfortunately the dropdown menu option was only used for 2 out of 11 main questions.  This led to very inconsistent data gathering! The shear amount of data made it difficult to format the data into a single format.  The variation of the defining time values was so great that one small change in code led to wide variations in accuracy.  The locations listed in the records just had a county name others distances and locations outside of known locations. Additionally, all the questions in the data entry form are not mandatory and therefore this led to many data records being incomplete.
+The UFO data is by far the most badly formatted data I have worked with and I underestimated the amount of time it would take to get this dataset in working order.  The data form used to enter the UFO sightings from the NUFORC site should contain only dropdown menu options, but unfortunately the dropdown menu option was only used for 2 out of 11 main questions.  This led to very inconsistent data gathering! The shear amount of data made it difficult to format the data into a single format.  The variation of the defining time values was so different that one small change in code led to wide variations in accuracy.  The locations listed in the records just had a county name others distances and locations outside of known locations. Additionally, not all the questions in the data entry form from the NUFORC site are not mandatory and therefore this led to many data records being incomplete.
 
 ## Exploratory Data Analysis (EDA):
 
-I completed this project using R.  I was struggling with cleaning the data in R because of the inconsistancy in each column.  Therefore, I did a majority of cleaning in Excel.  The data columns are Date, Time, City, State, UFO Description, Comments, and Coordinates.
-
-After cleaning the data I reviewed my hard work with the following commands:
-
+I completed this project using R.  I was struggling with cleaning the data in R because of the inconsistancy in each column.  Therefore, I did a majority of cleaning in Excel.  The data columns are Date, Time, City, State, UFO Description, Comments, and Coordinates.    
+    
+After cleaning the data I reviewed my hard work with the following commands:    
+    
 knitr::kable(head(ufo))    
 str(ufo)    
-
+    
 I noticed my values needed to be converted to factors:    
-
+    
 ufo$ampm=as.factor(ufo$ampm)    
 ufo$Region=as.factor(ufo$Region)    
 ufo$Hoax=as.factor(ufo$Hoax)    
 ufo$Shape=as.factor(ufo$Shape)     
 ufo$State=as.factor(ufo$State)    
-
-Checking the variables as factors:    
-
+    
+Checking the variables as factors to ensure the conversion was done properly:    
+    
 head(ufo)    
 summary(ufo)    
    
-## Models, Analysis, Tools/Libraries used:
+## From here on I started building the Models:    
 
 I needed the following libraries to run my models:    
    library(zoo)    
@@ -69,25 +69,25 @@ countregion <- as.data.frame(countregion)
 colnames(countregion) <- c("region", "count")    
 str(countregion)  
     
-    'data.frame':	4 obs. of  2 variables:    
+  'data.frame':4 obs. of  2 variables:    
  $ region: Factor w/ 4 levels "Alaska","Canada",..: 1 2 3 4    
  $ count : int  519 4727 8084 99480    
      
      
 head(countregion)    
     
-         region count    
+       region   count    
 1        Alaska   519    
 2        Canada  4727    
 3 International  8084    
 4        States 99480    
     
-regionplot1 <- ggplot(countregion, aes(x = region, y = count)) +
+regionplot1 <- ggplot(countregion, aes(x = region, y = count)) +    
   geom_bar(stat = "identity",colour="Green") +labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")    
 regionplot1    
-
-regionplot2 <- ggplot(countregion, aes(x = reorder(region, -count), y = count)) +
-  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")    
+    
+regionplot2 <- ggplot(countregion, aes(x = reorder(region, -count), y = count)) +    
+  geom_bar(stat = "identity",colour="Green")+labs(title="UFO Sightings by Region", y="Total Sightings", x="Region")        
 regionplot2   
     
 ![image](https://user-images.githubusercontent.com/36289126/37190283-42b581b8-2316-11e8-8fcd-b1947917832a.png)  
