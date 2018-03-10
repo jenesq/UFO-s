@@ -11,7 +11,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='UFO' name='excel-direct.1pmz0jo13nhzky19j40u704224w9'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/matthewarcher/Desktop/UFO.xlsx' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/jennyesquibel/Desktop/UFO.xlsx' interpretationMode='0' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
         <relation connection='excel-direct.1pmz0jo13nhzky19j40u704224w9' name='UFO' table='[UFO$]' type='table'>
