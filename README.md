@@ -215,23 +215,12 @@ TotalMonths <-as.table(TotalMonths)
 TotalMonths= as.data.frame(TotalMonths)    
 colnames(TotalMonths) <- c("month", "total")    
 TotalMonths$AvgPerMonth <-(TotalMonths$total)/Totalyears    
-TotalMonths    
+TotalMonths  
     
-   month total   AvgPerMonth    
-1    01   7920    80.00000    
-2    02   6536    66.02020    
-3    03   7249    73.22222    
-4    04   7374    74.48485    
-5    05   7598    76.74747    
-6    06  11352   114.66667    
-7    07  13464   136.00000    
-8    08  11984   121.05051    
-9    09  10969   110.79798    
-10   10  10584   106.90909    
-11   11   9718    98.16162    
-12   12   8062    81.43434    
+![image](https://user-images.githubusercontent.com/36289126/37238198-b7d15648-23de-11e8-9ad1-ecf18cb9f637.png)    
     
-    
+        
+        
 plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
     
 ![image](https://user-images.githubusercontent.com/36289126/37192477-de39a4e6-2322-11e8-90c0-679b92779234.png)    
