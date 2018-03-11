@@ -403,11 +403,11 @@ The data also revealed the top three most frequently sighted UFO shapes to be:
 - Triangle (10,628)    
     
 Were you expecting flying saucer?  Well, nope!  If you think about it the data makes sense.  Since the most reported UFO sightings are reported at night it is in line that the most popular shape reported is a light formation.  As we know it is dark at night, and the darkness can explain that people are seeing the lights but not having a clear view of the shape.    
-
-Additionally, I wanted to test the correlations between variables and see if any of them impacted one another.  The strongest correlations were between longitude and year and latitude and longitude.  This is information did not excite me.  So moving on, the dataset had clear notes of potential hoax claims flagged by the NUFORC organization.  I wanted to dig a little further into this and build a model for hoax prediction.   Only .002% of the dataset had any sightings flagged as a hoax.  In order to handle this imbalance in the dataset I used the SMOTE method.  The final model I created predicted a hoax correctly 95% of the time.  What I also found interesting about this model is almost every variable was significant in the model.  
+    
+Additionally, I wanted to test the correlations between variables and see if any of them impacted one another.  The strongest correlations were between longitude and year and latitude and longitude.  But, all the variables had strong correlations. This information did not excite me and I did not gain any insight that wasn’t already obvious, but it did reiterate that I needed all my variables to run a complete analysis. So moving on, the dataset had clear notes of potential hoax claims flagged by the NUFORC organization.  I wanted to dig a little further into this and build a model for hoax prediction.   Only .002% of the dataset had any sightings flagged as a hoax.  In order to handle this imbalance in the dataset I used the SMOTE method.  The final model I created predicted a hoax correctly 95% of the time.  What I also found interesting about this model is almost every variable was significant in the model.  
    
 Lastly, I wanted to place the reported UFO sightings on a map for all the visual learners out there.  From the map a few patterns were notable.  First, in Russia there is a clear straight line of reported sightings making me wonder if that is a major highway.  I also found it interesting that with one of the largest populations in the world, China, did not have more reported sightings.  Either the United States is under high surveillance or we like reporting anything we see in the skies as a UFO.  
-
+    
 Thank you!    
 
     
