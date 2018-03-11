@@ -2,7 +2,7 @@
 
 This dataset contains over 112,000 reports of UFO sightings dating back to 1939.
 
-## Description
+## Project Description
 
 This project for my Data Science practicum I. I collected the UFO Sightings data by scraping the datapoints from the NUFORC website (http://www.nuforc.org/).  The reporting center collects data with an online form or through a hotline number.  
 
