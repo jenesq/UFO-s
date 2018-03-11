@@ -159,11 +159,47 @@ countstateplot2
     
 ### UFO Sightings Per Year    
 
-THe below graph was created in Tableau    
+The below graph was created in Tableau    
+    
+![image](https://user-images.githubusercontent.com/36289126/37250053-f5e1b950-24b0-11e8-9bb3-a68488f89ffc.png)    
 
-
-
-
+### Most Popular Month:    
+str(ufo$Date)    
+ufo$month<-as.factor(format(ufo$Date, "%m"))     
+summary(ufo$month)    
+    
+plot(ufo$month,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month",col="green")    
+       
+![image](https://user-images.githubusercontent.com/36289126/37192149-1410c1c8-2321-11e8-8f97-bf0b7e27d9e1.png)    
+    
+    
+ufoDataByMonth <-summary(ufo$month)    
+ufoDataByMonth <- as.table(ufoDataByMonth)    
+ufoDataByMonth <- as.data.frame(ufoDataByMonth)    
+colnames(ufoDataByMonth) <- c("month", "count")    
+    
+plot(ufoDataByMonth,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month")    
+    
+![image](https://user-images.githubusercontent.com/36289126/37192155-1f4473fa-2321-11e8-9162-111c37d9566d.png)    
+    
+    
+### Calculate avg ufo sightings by month:    
+Totalyears = max(ufo$year)-min(ufo$year)    
+TotalMonths <-summary(ufo$month)    
+TotalMonths <-as.table(TotalMonths)    
+TotalMonths= as.data.frame(TotalMonths)    
+colnames(TotalMonths) <- c("month", "total")    
+TotalMonths$AvgPerMonth <-(TotalMonths$total)/Totalyears    
+TotalMonths  
+    
+![image](https://user-images.githubusercontent.com/36289126/37238198-b7d15648-23de-11e8-9ad1-ecf18cb9f637.png)    
+    
+        
+        
+plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
+    
+![image](https://user-images.githubusercontent.com/36289126/37192477-de39a4e6-2322-11e8-90c0-679b92779234.png)    
+    
 
 ### Amount of UFO Sightings Per Day of week:    
 ufo$weekday <- factor(weekdays(ufo$Date, T), levels = rev(c("Mon", "Tue", "Wed", "Thu","Fri", "Sat", "Sun")))       
@@ -184,49 +220,14 @@ hist(ufo$decade, xlab="Decade", ylab="# of Sightings", main = "UFO Sightings by 
 
 ![image](https://user-images.githubusercontent.com/36289126/37191852-66baf5da-231f-11e8-8435-c7710c199ee2.png)    
         
+
+### Amount of UFO Sightings Per Century:    
 ufo$century<- ufo$year - (ufo$year %% 100)    
 ufo$century     
 hist(ufo$century, xlab="Century", ylab="# of Sightings", main = "UFO Sightings by Century", col = "Green")    
        
 ![image](https://user-images.githubusercontent.com/36289126/37192012-36da25a6-2320-11e8-8d0a-fe424828cfdd.png)    
 
-### Most Popular Month:
-str(ufo$Date)    
-ufo$month<-as.factor(format(ufo$Date, "%m"))     
-summary(ufo$month)    
-    
-plot(ufo$month,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month",col="green")    
-       
-![image](https://user-images.githubusercontent.com/36289126/37192149-1410c1c8-2321-11e8-8f97-bf0b7e27d9e1.png)    
-    
-    
-ufoDataByMonth <-summary(ufo$month)    
-ufoDataByMonth <- as.table(ufoDataByMonth)    
-ufoDataByMonth <- as.data.frame(ufoDataByMonth)    
-colnames(ufoDataByMonth) <- c("month", "count")    
-    
-plot(ufoDataByMonth,main="UFO Sightings by Month", ylab="Total Sightings",xlab="Month")    
-    
-![image](https://user-images.githubusercontent.com/36289126/37192155-1f4473fa-2321-11e8-9162-111c37d9566d.png)    
-    
-
-### Calculate avg ufo sightings by month:    
-Totalyears = max(ufo$year)-min(ufo$year)    
-TotalMonths <-summary(ufo$month)    
-TotalMonths <-as.table(TotalMonths)    
-TotalMonths= as.data.frame(TotalMonths)    
-colnames(TotalMonths) <- c("month", "total")    
-TotalMonths$AvgPerMonth <-(TotalMonths$total)/Totalyears    
-TotalMonths  
-    
-![image](https://user-images.githubusercontent.com/36289126/37238198-b7d15648-23de-11e8-9ad1-ecf18cb9f637.png)    
-    
-        
-        
-plot(TotalMonths$month,TotalMonths$AvgPerMonth, ylab="Average Sightings",xlab="Month",main="Average UFO Sightings by Month")    
-    
-![image](https://user-images.githubusercontent.com/36289126/37192477-de39a4e6-2322-11e8-90c0-679b92779234.png)    
-    
     
 ### UFO Descriptions:
 
@@ -253,6 +254,11 @@ shapeplot2 <- ggplot(countshape, aes(x = reorder(shape, -count), y = count)) +
 shapeplot2    
     
 ![image](https://user-images.githubusercontent.com/36289126/37194589-2dce2c30-232c-11e8-8e3f-159b33cbaf28.png)    
+
+### UFO Sightings By The Hour:
+
+This chart was created in Tableau and it shows that there are more UFO sightings at night or early morning when it is still dark outside.
+
 
 
 ### Correlations Matrix:    
