@@ -1,7 +1,8 @@
 ## UFO Project 3-8-18
 
 ################################################################################################
-##NOTE:  through out the code in each section the graphs are displaying the same information but in a different color or view depending on where I was posting the data.
+##NOTE:  through out the code in each section the graphs are displaying the same information but in a different color    
+##or view depending on where I was posting the data.    
 ###############################################################################################
 
 #Loading the Data:
