@@ -157,6 +157,14 @@ countstateplot2
     
 ![image](https://user-images.githubusercontent.com/36289126/37191616-018a2e02-231e-11e8-8daf-ef81981e2294.png)    
     
+### UFO Sightings Per Year    
+
+THe below graph was created in Tableau    
+
+
+
+
+
 ### Amount of UFO Sightings Per Day of week:    
 ufo$weekday <- factor(weekdays(ufo$Date, T), levels = rev(c("Mon", "Tue", "Wed", "Thu","Fri", "Sat", "Sun")))       
 plot(ufo$weekday, xlab="Day of the Week", ylab="Total Sightings", main="UFO Sighting by Day", col = "Green")    
