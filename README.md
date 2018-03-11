@@ -255,12 +255,16 @@ shapeplot2
     
 ![image](https://user-images.githubusercontent.com/36289126/37194589-2dce2c30-232c-11e8-8e3f-159b33cbaf28.png)    
 
-### UFO Sightings By The Hour:
+### UFO Sightings By The Hour:    
+    
+This chart was created in Tableau and it shows that there are more UFO sightings at night or early morning when it is still dark outside.    
 
-This chart was created in Tableau and it shows that there are more UFO sightings at night or early morning when it is still dark outside.
-
-
-
+![image](https://user-images.githubusercontent.com/36289126/37250088-c8a75bb0-24b1-11e8-8c99-64e9af322ffd.png)    
+    
+    
+![image](https://user-images.githubusercontent.com/36289126/37250094-d13a087c-24b1-11e8-9af2-f4cb6f3aa735.png)    
+    
+    
 ### Correlations Matrix:    
 (Function borrowed from https://gist.github.com/talegari/b514dbbc651c25e2075d88f31d48057b):
 df=ufo[,c(10,5,6,15,3,11,19,16,13,14)]    
@@ -357,7 +361,12 @@ Accuracy
     
 [1] 0.9572585    
 
-The model predicted a hoax correctly 95% of the time.    
+The model predicted a hoax correctly 95% of the time.   
+
+### UFO Hoax Data Points Mapped:    
+
+
+
 
 ### World Map Displaying the UFO Sightings:    
     
