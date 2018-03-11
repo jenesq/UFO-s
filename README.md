@@ -365,9 +365,11 @@ The model predicted a hoax correctly 95% of the time.
 
 ### UFO Hoax Data Points Mapped:    
 
-
-
-
+![image](https://user-images.githubusercontent.com/36289126/37250117-33f2a17c-24b2-11e8-9864-34c3743acca4.png)    
+    
+Key Observations:    
+With the help of Tableu, I plotted the Hoax data points on the map and I can see a pattern to the hoax data.  They are not spread out through the world, which I wasn't expecting.  Very interesting!   
+    
 ### World Map Displaying the UFO Sightings:    
     
 I borrowed the code from https://www.kaggle.com/mrisdal/animating-ufo-sightings.  I tried using other options by using different packages and I kept getting an error for the version of R I am using.    
