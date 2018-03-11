@@ -11,7 +11,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='r-dataUFO' name='textscan.1jughpl0f89bey1celyqr0a9acqf'>
-            <connection class='textscan' directory='/Users/matthewarcher/Desktop' filename='r-dataUFO.csv' password='' server='' />
+            <connection class='textscan' directory='/Users/jennyesquibel/Desktop' filename='r-dataUFO.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.1jughpl0f89bey1celyqr0a9acqf' name='r-dataUFO.csv' table='[r-dataUFO#csv]' type='table'>
